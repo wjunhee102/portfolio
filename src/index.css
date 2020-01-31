@@ -1,40 +1,57 @@
-h1 {
-  background-color: lightblue;
-  color: red;
+body {
+  background-color: #262627;
+  color: #ececec;
 }
 
-#easy1, #easy2 {
+h1 {
+  color: lightblue;
+}
+
+#easy1::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+#easy2 .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-#easy1::after, #easy2::after {
-  display: block;
-  content: "";
-  clear: both;
+#easy2 .wrap div {
+  width: 600px;
 }
 
-#easy1 h1, #easy2 h1 {
+#easy2 .wrap div:first-child {
+  width: 100%;
+  text-align: center;
+}
+
+#easy2 .wrap div:first-child img {
+  width: 600px;
+}
+
+#easy2 .wrap div h1 {
   display: inline-block;
 }
 
-#easy1 h1::after, #easy2 h1::after {
+#easy2 .wrap div h1::after {
   display: block;
   content: "";
   clear: both;
 }
 
-#easy1 h4, #easy2 h4 {
-  display: block;
+#easy2 .wrap div h4 {
+  display: inline-block;
 }
 
-#easy1 img, #easy2 img {
+#easy2 .wrap div img {
   width: 400px;
 }
 /*# sourceMappingURL=index.css.map */

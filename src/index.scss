@@ -1,19 +1,27 @@
 @charset "UTF-8";
 
 $marginAuto: 0 auto;
-$bgColor: lightblue;
-$textColor: red;
+$bodyBgColor: #262627;
+$bodyTextColor: #ececec;
+$textColor: lightblue;
 
-@mixin flexbox {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1000px;
-    margin: $marginAuto;
-}
 @mixin clearfix {
     display: block;
     content: "";
     clear: both;
+}
+@mixin blind {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -2;
+}
+@mixin flexbox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 @mixin displayMode($x) {
     display: $x;
@@ -23,29 +31,46 @@ $textColor: red;
     width: 400px;
 }
 
+
+body {
+    background-color: $bodyBgColor;
+    color: $bodyTextColor;
+}
+
 h1 {
-    background-color: $bgColor;
-    color: $textColor
+    color: $textColor;
 }
 #easy1 {
     &::after {
         @include clearfix();
     }
-    @include flexbox();
-    h1 {
-        @include displayMode(inline-block);
-        &::after {
-            @include clearfix();
-        }
-    }
-    h4 {
-        @include displayMode(block);
-    }
-    img {
-        @include imgbox();
-    }
+    
 }
 
 #easy2 {
-    @extend #easy1 ;
+    .wrap {
+        @include flexbox();
+        div {
+            width: 600px;
+            &:first-child {
+                width: 100%;
+                text-align: center;
+                img {
+                    width: 600px;
+                }
+            }
+            h1 {
+                @include displayMode(inline-block);
+                &::after {
+                    @include clearfix();
+                }
+            }
+            h4 {
+                @include displayMode(inline-block);
+            }
+            img {
+                @include imgbox();
+            }
+        }
+    }
 }
