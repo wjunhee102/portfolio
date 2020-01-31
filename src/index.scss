@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+$marginAuto: 0 auto;
+$bgColor: lightblue;
+$textColor: red;
+
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: $marginAuto;
+}
+@mixin inline-block {
+    display: inline-block;
+}
+
+@mixin imgbox {
+    width: 400px;
+}
+
+h1 {
+    background-color: $bgColor;
+    color: $textColor
+}
+#easy1 {
+    @include flexbox();
+    h1 {
+        @include inline-block();
+    }
+    h4 {
+        @include inline-block();
+    }
+    img {
+        @include imgbox();
+    }
+}
+#easy2 {
+    @extend #easy1 ;
+}
