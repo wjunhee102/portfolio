@@ -10,8 +10,13 @@ $textColor: red;
     max-width: 1000px;
     margin: $marginAuto;
 }
-@mixin inline-block {
-    display: inline-block;
+@mixin clearfix {
+    display: block;
+    content: "";
+    clear: both;
+}
+@mixin displayMode($x) {
+    display: $x;
 }
 
 @mixin imgbox {
@@ -23,17 +28,24 @@ h1 {
     color: $textColor
 }
 #easy1 {
+    &::after {
+        @include clearfix();
+    }
     @include flexbox();
     h1 {
-        @include inline-block();
+        @include displayMode(inline-block);
+        &::after {
+            @include clearfix();
+        }
     }
     h4 {
-        @include inline-block();
+        @include displayMode(block);
     }
     img {
         @include imgbox();
     }
 }
+
 #easy2 {
     @extend #easy1 ;
 }

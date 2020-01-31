@@ -14,12 +14,24 @@ h1 {
   margin: 0 auto;
 }
 
+#easy1::after, #easy2::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
 #easy1 h1, #easy2 h1 {
   display: inline-block;
 }
 
+#easy1 h1::after, #easy2 h1::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
 #easy1 h4, #easy2 h4 {
-  display: inline-block;
+  display: block;
 }
 
 #easy1 img, #easy2 img {
