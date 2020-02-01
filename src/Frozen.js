@@ -6,8 +6,8 @@ function Frozen2({name, picture, rating}) {
   return (
   <div>
     <img src={picture} alt={name} />
-    <h1>I like {name}</h1>
-    <h4>{rating}</h4>
+    <h1 className="tit">I like {name}</h1>
+    <h4 className="raiting">{rating}</h4>
   </div>
   )
 }
@@ -62,14 +62,27 @@ const frozenILike = [
 // }
 
 
-function Frozen() {
-  return (
-  <div class="wrap">
-    {frozenILike.map(mov =>(
-      <Frozen2 name={mov.name} picture={mov.image} key={mov.id} rating={mov.rating} />
-    ))}
-  </div>
-  );
-}
+// function Frozen() {
+//   return (
+//   <div class="wrap">
+//     {frozenILike.map(mov =>(
+//       <Frozen2 name={mov.name} picture={mov.image} key={mov.id} rating={mov.rating} />
+//     ))}
+//   </div>
+//   );
+// }
+
+class Frozen extends React.Component {
+    render() {
+        return (
+            <div className="wrap">
+              {frozenILike.map(mov =>(
+                <Frozen2 name={mov.name} picture={mov.image} key={mov.id} rating={mov.rating} />
+              ))}
+            </div>
+            );
+        }
+    }
+    
 
 export default Frozen;

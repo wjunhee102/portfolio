@@ -1,19 +1,20 @@
-body {
-  background-color: #262627;
-  color: #ececec;
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700|Ubuntu:300,400,500,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  color: lightblue;
+a {
+  text-decoration: none;
 }
 
-#easy1::after {
-  display: block;
-  content: "";
-  clear: both;
+li {
+  list-style: none;
 }
 
-#easy2 .wrap {
+html, body, #Movies_app, .container {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,36 +23,119 @@ h1 {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#easy2 .wrap div {
-  width: 600px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eff3f7;
+  color: #000;
+  font-family: "Ubuntu", "Noto Sans KR", "맑은-고딕", "margun-gothic", "돋움", "Dotum", sans-serif;
 }
 
-#easy2 .wrap div:first-child {
+.loader {
   width: 100%;
-  text-align: center;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 300;
 }
 
-#easy2 .wrap div:first-child img {
-  width: 600px;
+.movies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 50px;
+  padding-top: 70px;
+  width: 60%;
 }
 
-#easy2 .wrap div h1 {
-  display: inline-block;
+.movies .movie {
+  width: 45%;
+  background-color: #fff;
+  margin-bottom: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-weight: 300;
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+  color: #adaeb9;
+  -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+          box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
-#easy2 .wrap div h1::after {
-  display: block;
-  content: "";
-  clear: both;
+.movies .movie img {
+  position: relative;
+  top: -50px;
+  max-width: 150px;
+  width: 100%;
+  margin-right: 30px;
+  -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+          box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
-#easy2 .wrap div h4 {
-  display: inline-block;
+.movies .movie .movie_year, .movies .movie .movie_title {
+  margin: 0;
+  font-weight: 300;
 }
 
-#easy2 .wrap div img {
-  width: 400px;
+.movies .movie .movie_title {
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #2c2c2c;
+}
+
+.movies .movie .movie_genres, .movies .movie .movie_year {
+  color: #b2b3bc;
+}
+
+.movies .movie .movie_genres {
+  margin: 0;
+  padding: 0;
+  margin: 5px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movies .movie .movie_genres .genres_genre {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.movies .movie .movie_summary {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: wrap;
 }
 /*# sourceMappingURL=index.css.map */
