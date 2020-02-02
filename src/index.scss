@@ -138,6 +138,7 @@ body {
             }
         }
         .movie_summary {
+            width: 100%;
             @include textOverflow(wrap);
         }
     }

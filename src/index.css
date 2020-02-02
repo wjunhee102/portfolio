@@ -134,6 +134,7 @@ body {
 }
 
 .movies .movie .movie_summary {
+  width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: wrap;
