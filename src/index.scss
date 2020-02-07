@@ -71,6 +71,9 @@ body {
     color: $bodyTextColor;
     font-family:$ubuntu , $notoSans, $defaultFont;
     @extend html ;
+    &::after {
+        @include clearfix();
+    }
 }
 
 #Movies_app {
