@@ -88,6 +88,32 @@ body {
     font-weight: 300;
 }
 
+.gnb {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  left: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+  @include flexbox(space-between, wrap);
+  a {
+        display: block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: white;
+        border-radius: 5px;
+        color: #000;
+        font-weight: 500;
+        text-transform: capitalize;
+        @include boxShdaow();
+        &:hover {
+            background-color: #ccc;
+        }
+  }
+}
+
 .container {
     @extend html ;   
 }
@@ -98,8 +124,12 @@ body {
     padding: 50px;
     padding-top: 70px;
     width: 60%;
-    .movie {
+    a {
+        display: block;
         width: 45%;
+    }
+    .movie {
+        width: 100%;
         background-color: #fff;
         margin-bottom: 70px;
         @include flexbox(space-between, no-wrap);
@@ -145,4 +175,15 @@ body {
             @include textOverflow(wrap);
         }
     }
+}
+
+.about {
+    padding: 30px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    @include boxShdaow();
 }
