@@ -2,21 +2,19 @@ import React from 'react';
 import { HashRouter, Route } from "react-router-dom";
 import About  from "./routes/about";
 import Home from "./routes/home";
-
+import Navigation from "./components/Navigation";
 
  function App() {
    return (
+     //<BorwserRouter> 는 깃허브에서 사용할 때 설명하기 힘들다.
+     <>
       <HashRouter>
-        <Route path="/home">
-          <h1>home</h1>
-        </Route>
-        <Route path="/home/introduction">
-          <h1>introduction</h1>
-        </Route>
-        <Route path="/about">
-          <h1>About</h1>
-        </Route>
+        <Navigation />
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/about" component={About} />
       </HashRouter>
+      <footer></footer>
+    </>
    )
  }
 
