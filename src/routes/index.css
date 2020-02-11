@@ -36,6 +36,12 @@ body {
   font-family: "Ubuntu", "Noto Sans KR", "맑은-고딕", "margun-gothic", "돋움", "Dotum", sans-serif;
 }
 
+body::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
 .loader {
   width: 100%;
   height: 100%;
@@ -51,6 +57,43 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 300;
+}
+
+.gnb {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gnb a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  color: #000;
+  font-weight: 500;
+  text-transform: capitalize;
+  -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+          box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.gnb a:hover {
+  background-color: #ccc;
 }
 
 .movies {
@@ -70,8 +113,13 @@ body {
   width: 60%;
 }
 
-.movies .movie {
+.movies a {
+  display: block;
   width: 45%;
+}
+
+.movies .movie {
+  width: 100%;
   background-color: #fff;
   margin-bottom: 70px;
   display: -webkit-box;
@@ -138,5 +186,18 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: wrap;
+}
+
+.about {
+  padding: 30px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+          box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 /*# sourceMappingURL=index.css.map */
